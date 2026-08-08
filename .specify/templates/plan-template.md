@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Code Quality Gate: define linting, formatting and static-analysis checks with objective pass/fail criteria.
+- Testing Gate: define mandatory test scope (unit, integration, and E2E for critical journeys) and failure policy.
+- UX Consistency Gate: define reusable UI patterns, interaction behavior, and acceptance checks for consistency.
+- Performance Gate: define measurable targets (for example p95 latency, rendering time, throughput, memory) and validation method.
+- Evidence Gate: define artifacts required in PR (test results, UX checklist evidence, and performance results).
 
 ## Project Structure
 

@@ -95,6 +95,13 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Non-Functional Requirements *(mandatory)*
+
+- **NFR-001 (Code Quality)**: System changes MUST pass lint, formatting, and static-analysis checks with zero blocking issues.
+- **NFR-002 (Testing Standard)**: Feature MUST define required unit, integration, and end-to-end test coverage according to risk.
+- **NFR-003 (UX Consistency)**: Feature MUST define how UI behavior and language remain consistent with existing approved patterns.
+- **NFR-004 (Performance)**: Feature MUST define measurable performance targets and how they are validated before release.
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
@@ -113,6 +120,8 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-005**: [Code quality metric, e.g., "0 blocking lint/static-analysis findings in CI"]
+- **SC-006**: [Performance metric, e.g., "p95 response time under 200ms under expected load"]
 
 ## Assumptions
 
