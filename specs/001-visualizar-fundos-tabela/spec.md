@@ -110,7 +110,7 @@ Como usuario responsavel, quero atualizar o banco JSON com os dados da planilha 
 - **NFR-001 (Code Quality)**: Mudancas da feature MUST passar validacoes de qualidade definidas pelo projeto sem issues bloqueantes.
 - **NFR-002 (Testing Standard)**: A feature MUST ter cobertura de testes para carregamento da planilha, renderizacao das colunas exigidas e comportamento dos hyperlinks.
 - **NFR-003 (UX Consistency)**: A interface MUST manter padrao visual consistente para cabecalho, linhas e links, com foco em legibilidade.
-- **NFR-004 (Performance)**: A tela inicial MUST apresentar os dados em tempo percebido como imediato para volume esperado da planilha.
+- **NFR-004 (Performance)**: A tela inicial MUST apresentar os dados em ate 2 segundos para planilha com ate 1.000 linhas, e a atualizacao manual do JSON MUST concluir em ate 5 segundos para o mesmo volume em ambiente de referencia.
 - **NFR-005 (Confiabilidade de Dados)**: O processo de leitura/gravacao do JSON MUST preservar consistencia dos registros e evitar arquivo corrompido em caso de falha de atualizacao.
 - **NFR-006 (Controle de Uso da Atualizacao)**: A atualizacao manual aberta a qualquer visitante MUST fornecer feedback claro de sucesso ou falha para evitar repeticao desnecessaria de acionamentos.
 - **NFR-007 (Concorrencia de Atualizacao)**: O mecanismo de bloqueio de atualizacoes simultaneas MUST evitar regravacoes concorrentes do JSON.

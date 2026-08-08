@@ -146,6 +146,9 @@
 - [ ] T051 [P] Update final runbook and troubleshooting in specs/001-visualizar-fundos-tabela/quickstart.md
 - [ ] T052 Consolidate quality gate outputs in specs/001-visualizar-fundos-tabela/evidence/final-quality-report.md
 - [ ] T053 Consolidate final validation checklist and sign-off in specs/001-visualizar-fundos-tabela/evidence/final-validation.md
+- [ ] T054 [P] [US1] Create integration test for missing required columns user message in tests/integration/missing-columns-message.test.ts
+- [ ] T055 [US1] Implement explicit missing required columns message path in app/api/fundos/route.ts and app/page.tsx
+- [ ] T056 [P] Execute timed usability validation for SC-003 and record protocol plus results in specs/001-visualizar-fundos-tabela/evidence/sc-003-usability.md
 
 ---
 
@@ -164,6 +167,12 @@
 - US2 depends on Phase 2 and can run independently of US1 implementation sequence once foundations are done
 - US4 depends on Phase 2 and can run independently once foundations are done
 - US3 depends on Phase 2 and can run after core rendering pieces exist
+
+### Additional Requirement-Driven Dependencies
+
+- T054 must be completed before T055
+- T055 should complete before final sign-off task T053
+- T056 should complete before final sign-off task T053
 
 ### Recommended Story Completion Order
 
@@ -187,6 +196,7 @@
 - US2 parallel tests: T025, T026, T027
 - US4 parallel tests: T033, T034, T035
 - US3 parallel tests: T042, T043, T044
+- Requirement-gap tasks can run in parallel: T054 and T056
 
 ## Parallel Example: User Story 1
 
