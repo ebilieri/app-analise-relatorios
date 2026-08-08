@@ -6,11 +6,14 @@
 
 ## Setup
 1. Instalar dependencias:
-   - `npm install`
+   - `"C:\\Program Files\\nodejs\\npm.cmd" install`
 2. Garantir que a planilha exista na raiz do projeto:
    - `fundos-para-analise.xlsx`
 3. Iniciar ambiente de desenvolvimento:
-   - `npm run dev`
+   - `"C:\\Program Files\\nodejs\\npm.cmd" run dev`
+
+4. Instalar browser para testes E2E:
+   - `.\\node_modules\\.bin\\playwright.cmd install chromium`
 
 ## First Run Behavior
 - Na inicializacao da aplicacao:
@@ -33,6 +36,6 @@
 - Tentativas concorrentes sao bloqueadas.
 
 ## Suggested Test Commands
-- `npm run lint`
-- `npm run test`
-- `npm run test:e2e`
+- `"C:\\Program Files\\nodejs\\npm.cmd" run lint`
+- `"C:\\Program Files\\nodejs\\npm.cmd" run test`
+- `"C:\\Program Files\\nodejs\\npm.cmd" run test:e2e`

@@ -10,6 +10,7 @@ A aplicacao expoe duas interfaces HTTP internas para suportar leitura e atualiza
 {
   "generatedAt": "2026-08-07T12:00:00.000Z",
   "rowCount": 123,
+  "discardedCount": 2,
   "records": [
     {
       "id": "abc123",
@@ -31,6 +32,7 @@ A aplicacao expoe duas interfaces HTTP internas para suportar leitura e atualiza
 }
 ```
 - Failure (500): erro de leitura/carga do JSON.
+  - Exemplo de erro esperado: `Colunas obrigatorias ausentes: Tipo, Link`.
 
 ## POST /api/refresh
 - Purpose: Atualizar JSON a partir da planilha.

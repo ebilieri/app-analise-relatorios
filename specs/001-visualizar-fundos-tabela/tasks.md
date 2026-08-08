@@ -11,12 +11,12 @@
 
 **Purpose**: Project initialization and baseline tooling
 
-- [ ] T001 Initialize Next.js TypeScript app structure and scripts in package.json
-- [ ] T002 Add runtime dependencies for spreadsheet and validation in package.json
-- [ ] T003 [P] Configure linting rules for the project in eslint.config.mjs
-- [ ] T004 [P] Configure unit and integration test runner in vitest.config.ts
-- [ ] T005 [P] Configure end-to-end test runner in playwright.config.ts
-- [ ] T006 [P] Prepare data directory bootstrap artifact in data/.gitkeep
+- [x] T001 Initialize Next.js TypeScript app structure and scripts in package.json
+- [x] T002 Add runtime dependencies for spreadsheet and validation in package.json
+- [x] T003 [P] Configure linting rules for the project in eslint.config.mjs
+- [x] T004 [P] Configure unit and integration test runner in vitest.config.ts
+- [x] T005 [P] Configure end-to-end test runner in playwright.config.ts
+- [x] T006 [P] Prepare data directory bootstrap artifact in data/.gitkeep
 
 ---
 
@@ -26,15 +26,15 @@
 
 **Critical**: No user story work starts before this phase completes
 
-- [ ] T007 Define canonical fund record schema and parsing guards in lib/funds-schema.ts
-- [ ] T008 [P] Implement XLSX reader and raw row extraction in lib/spreadsheet-reader.ts
-- [ ] T009 [P] Implement JSON storage reader and atomic writer in lib/json-store.ts
-- [ ] T010 Implement startup bootstrap and refresh orchestration with lock state in lib/funds-service.ts
-- [ ] T011 [P] Create GET endpoint contract skeleton for table data in app/api/fundos/route.ts
-- [ ] T012 [P] Create POST endpoint contract skeleton for refresh action in app/api/refresh/route.ts
-- [ ] T013 Define shared API success and error response helpers in lib/api-response.ts
-- [ ] T014 Define shared user feedback component for status messages in components/status-banner.tsx
-- [ ] T015 Define performance smoke measurement script for startup and refresh in scripts/perf-smoke.mjs
+- [x] T007 Define canonical fund record schema and parsing guards in lib/funds-schema.ts
+- [x] T008 [P] Implement XLSX reader and raw row extraction in lib/spreadsheet-reader.ts
+- [x] T009 [P] Implement JSON storage reader and atomic writer in lib/json-store.ts
+- [x] T010 Implement startup bootstrap and refresh orchestration with lock state in lib/funds-service.ts
+- [x] T011 [P] Create GET endpoint contract skeleton for table data in app/api/fundos/route.ts
+- [x] T012 [P] Create POST endpoint contract skeleton for refresh action in app/api/refresh/route.ts
+- [x] T013 Define shared API success and error response helpers in lib/api-response.ts
+- [x] T014 Define shared user feedback component for status messages in components/status-banner.tsx
+- [x] T015 Define performance smoke measurement script for startup and refresh in scripts/perf-smoke.mjs
 
 **Checkpoint**: Foundation ready, user stories can now proceed
 
@@ -48,18 +48,18 @@
 
 ### Tests for User Story 1 (Mandatory)
 
-- [ ] T016 [P] [US1] Create unit tests for schema normalization and required columns in tests/unit/funds-schema.test.ts
-- [ ] T017 [P] [US1] Create integration tests for startup loading from JSON and fallback generation in tests/integration/bootstrap-json.test.ts
-- [ ] T018 [P] [US1] Create E2E test for home table rendering with fixed columns in tests/e2e/home-table.spec.ts
+- [x] T016 [P] [US1] Create unit tests for schema normalization and required columns in tests/unit/funds-schema.test.ts
+- [x] T017 [P] [US1] Create integration tests for startup loading from JSON and fallback generation in tests/integration/bootstrap-json.test.ts
+- [x] T018 [P] [US1] Create E2E test for home table rendering with fixed columns in tests/e2e/home-table.spec.ts
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Implement table component with fixed headers Tipo, Papel and Link in components/fundos-table.tsx
-- [ ] T020 [US1] Implement home page data loading and rendering flow in app/page.tsx
-- [ ] T021 [US1] Implement GET fundos endpoint using JSON-backed service in app/api/fundos/route.ts
-- [ ] T022 [US1] Implement empty and startup-error visual states in app/page.tsx
-- [ ] T023 [US1] Record UX consistency evidence for table readability in specs/001-visualizar-fundos-tabela/evidence/us1-ux.md
-- [ ] T024 [US1] Record startup performance evidence against target in specs/001-visualizar-fundos-tabela/evidence/us1-performance.md
+- [x] T019 [P] [US1] Implement table component with fixed headers Tipo, Papel and Link in components/fundos-table.tsx
+- [x] T020 [US1] Implement home page data loading and rendering flow in app/page.tsx
+- [x] T021 [US1] Implement GET fundos endpoint using JSON-backed service in app/api/fundos/route.ts
+- [x] T022 [US1] Implement empty and startup-error visual states in app/page.tsx
+- [x] T023 [US1] Record UX consistency evidence for table readability in specs/001-visualizar-fundos-tabela/evidence/us1-ux.md
+- [x] T024 [US1] Record startup performance evidence against target in specs/001-visualizar-fundos-tabela/evidence/us1-performance.md
 
 **Checkpoint**: US1 functional and independently testable
 
@@ -73,17 +73,17 @@
 
 ### Tests for User Story 2 (Mandatory)
 
-- [ ] T025 [P] [US2] Create unit tests for link validation and link status derivation in tests/unit/link-validation.test.ts
-- [ ] T026 [P] [US2] Create integration tests for GET payload link fields and fallback mapping in tests/integration/link-status-api.test.ts
-- [ ] T027 [P] [US2] Create E2E test for clickable link and Link indisponivel fallback in tests/e2e/link-behavior.spec.ts
+- [x] T025 [P] [US2] Create unit tests for link validation and link status derivation in tests/unit/link-validation.test.ts
+- [x] T026 [P] [US2] Create integration tests for GET payload link fields and fallback mapping in tests/integration/link-status-api.test.ts
+- [x] T027 [P] [US2] Create E2E test for clickable link and Link indisponivel fallback in tests/e2e/link-behavior.spec.ts
 
 ### Implementation for User Story 2
 
-- [ ] T028 [P] [US2] Implement link normalization fields linkUrl, linkDisplay and linkStatus in lib/funds-schema.ts
-- [ ] T029 [US2] Implement hyperlink rendering and invalid-link fallback in components/fundos-table.tsx
-- [ ] T030 [US2] Ensure GET fundos contract returns link fields required by UI in app/api/fundos/route.ts
-- [ ] T031 [US2] Record UX consistency evidence for link behavior in specs/001-visualizar-fundos-tabela/evidence/us2-ux.md
-- [ ] T032 [US2] Record rendering performance evidence for link handling in specs/001-visualizar-fundos-tabela/evidence/us2-performance.md
+- [x] T028 [P] [US2] Implement link normalization fields linkUrl, linkDisplay and linkStatus in lib/funds-schema.ts
+- [x] T029 [US2] Implement hyperlink rendering and invalid-link fallback in components/fundos-table.tsx
+- [x] T030 [US2] Ensure GET fundos contract returns link fields required by UI in app/api/fundos/route.ts
+- [x] T031 [US2] Record UX consistency evidence for link behavior in specs/001-visualizar-fundos-tabela/evidence/us2-ux.md
+- [x] T032 [US2] Record rendering performance evidence for link handling in specs/001-visualizar-fundos-tabela/evidence/us2-performance.md
 
 **Checkpoint**: US2 functional and independently testable
 
@@ -97,18 +97,18 @@
 
 ### Tests for User Story 4 (Mandatory)
 
-- [ ] T033 [P] [US4] Create unit tests for refresh lock and state transitions in tests/unit/funds-refresh-lock.test.ts
-- [ ] T034 [P] [US4] Create integration tests for refresh success, failure and blocked responses in tests/integration/refresh-endpoint.test.ts
-- [ ] T035 [P] [US4] Create E2E test for manual refresh feedback and concurrent request blocking in tests/e2e/manual-refresh.spec.ts
+- [x] T033 [P] [US4] Create unit tests for refresh lock and state transitions in tests/unit/funds-refresh-lock.test.ts
+- [x] T034 [P] [US4] Create integration tests for refresh success, failure and blocked responses in tests/integration/refresh-endpoint.test.ts
+- [x] T035 [P] [US4] Create E2E test for manual refresh feedback and concurrent request blocking in tests/e2e/manual-refresh.spec.ts
 
 ### Implementation for User Story 4
 
-- [ ] T036 [US4] Implement startup check JSON exists else generate from spreadsheet in lib/funds-service.ts
-- [ ] T037 [US4] Implement POST refresh endpoint with single-flight lock and status messages in app/api/refresh/route.ts
-- [ ] T038 [US4] Implement manual refresh action and user feedback states in app/page.tsx
-- [ ] T039 [US4] Implement atomic JSON rewrite with metadata update in lib/json-store.ts
-- [ ] T040 [US4] Record UX evidence for success, failure and blocked refresh states in specs/001-visualizar-fundos-tabela/evidence/us4-ux.md
-- [ ] T041 [US4] Record refresh performance evidence against target in specs/001-visualizar-fundos-tabela/evidence/us4-performance.md
+- [x] T036 [US4] Implement startup check JSON exists else generate from spreadsheet in lib/funds-service.ts
+- [x] T037 [US4] Implement POST refresh endpoint with single-flight lock and status messages in app/api/refresh/route.ts
+- [x] T038 [US4] Implement manual refresh action and user feedback states in app/page.tsx
+- [x] T039 [US4] Implement atomic JSON rewrite with metadata update in lib/json-store.ts
+- [x] T040 [US4] Record UX evidence for success, failure and blocked refresh states in specs/001-visualizar-fundos-tabela/evidence/us4-ux.md
+- [x] T041 [US4] Record refresh performance evidence against target in specs/001-visualizar-fundos-tabela/evidence/us4-performance.md
 
 **Checkpoint**: US4 functional and independently testable
 
@@ -122,17 +122,17 @@
 
 ### Tests for User Story 3 (Mandatory)
 
-- [ ] T042 [P] [US3] Create integration test for responsive table layout behavior in tests/integration/table-responsive.test.tsx
-- [ ] T043 [P] [US3] Create E2E mobile viewport readability test in tests/e2e/mobile-readability.spec.ts
-- [ ] T044 [P] [US3] Create E2E accessibility smoke test for table navigation and labels in tests/e2e/a11y-table.spec.ts
+- [x] T042 [P] [US3] Create integration test for responsive table layout behavior in tests/integration/table-responsive.test.tsx
+- [x] T043 [P] [US3] Create E2E mobile viewport readability test in tests/e2e/mobile-readability.spec.ts
+- [x] T044 [P] [US3] Create E2E accessibility smoke test for table navigation and labels in tests/e2e/a11y-table.spec.ts
 
 ### Implementation for User Story 3
 
-- [ ] T045 [US3] Implement responsive spacing, typography and overflow handling in app/globals.css
-- [ ] T046 [US3] Improve header, row density and contrast behavior in components/fundos-table.tsx
-- [ ] T047 [US3] Apply consistent loading, success and error feedback visuals in components/status-banner.tsx
-- [ ] T048 [US3] Record UX checklist evidence for desktop and mobile readability in specs/001-visualizar-fundos-tabela/evidence/us3-ux.md
-- [ ] T049 [US3] Record post-polish performance evidence in specs/001-visualizar-fundos-tabela/evidence/us3-performance.md
+- [x] T045 [US3] Implement responsive spacing, typography and overflow handling in app/globals.css
+- [x] T046 [US3] Improve header, row density and contrast behavior in components/fundos-table.tsx
+- [x] T047 [US3] Apply consistent loading, success and error feedback visuals in components/status-banner.tsx
+- [x] T048 [US3] Record UX checklist evidence for desktop and mobile readability in specs/001-visualizar-fundos-tabela/evidence/us3-ux.md
+- [x] T049 [US3] Record post-polish performance evidence in specs/001-visualizar-fundos-tabela/evidence/us3-performance.md
 
 **Checkpoint**: US3 functional and independently testable
 
@@ -142,12 +142,12 @@
 
 **Purpose**: Final hardening and consolidated evidence across stories
 
-- [ ] T050 [P] Align contract examples with implemented responses in specs/001-visualizar-fundos-tabela/contracts/api-contract.md
-- [ ] T051 [P] Update final runbook and troubleshooting in specs/001-visualizar-fundos-tabela/quickstart.md
-- [ ] T052 Consolidate quality gate outputs in specs/001-visualizar-fundos-tabela/evidence/final-quality-report.md
+- [x] T050 [P] Align contract examples with implemented responses in specs/001-visualizar-fundos-tabela/contracts/api-contract.md
+- [x] T051 [P] Update final runbook and troubleshooting in specs/001-visualizar-fundos-tabela/quickstart.md
+- [x] T052 Consolidate quality gate outputs in specs/001-visualizar-fundos-tabela/evidence/final-quality-report.md
 - [ ] T053 Consolidate final validation checklist and sign-off in specs/001-visualizar-fundos-tabela/evidence/final-validation.md
-- [ ] T054 [P] [US1] Create integration test for missing required columns user message in tests/integration/missing-columns-message.test.ts
-- [ ] T055 [US1] Implement explicit missing required columns message path in app/api/fundos/route.ts and app/page.tsx
+- [x] T054 [P] [US1] Create integration test for missing required columns user message in tests/integration/missing-columns-message.test.ts
+- [x] T055 [US1] Implement explicit missing required columns message path in app/api/fundos/route.ts and app/page.tsx
 - [ ] T056 [P] Execute timed usability validation for SC-003 and record protocol plus results in specs/001-visualizar-fundos-tabela/evidence/sc-003-usability.md
 
 ---

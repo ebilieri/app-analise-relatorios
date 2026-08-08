@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-08T01:49:18.377Z",
+  "sourceFile": "fundos-para-analise.xlsx",
+  "rowCount": 39,
+  "discardedCount": 0,
+  "records": [
+    {
+      "id": "1-etf-coin11",
+      "tipo": "ETF",
+      "papel": "COIN11",
+      "linkRaw": "https://statusinvest.com.br/etfs/coin11",
+      "linkUrl": "https://statusinvest.com.br/etfs/coin11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "2-etf-qqqi11",
+      "tipo": "ETF",
+      "papel": "QQQI11",
+      "linkRaw": "https://statusinvest.com.br/etfs/qqqi11",
+      "linkUrl": "https://statusinvest.com.br/etfs/qqqi11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "3-etf-wrld11",
+      "tipo": "ETF",
+      "papel": "WRLD11",
+      "linkRaw": "https://statusinvest.com.br/etfs/wrld11",
+      "linkUrl": "https://statusinvest.com.br/etfs/wrld11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "4-etf-spyi11",
+      "tipo": "ETF",
+      "papel": "SPYI11",
+      "linkRaw": "https://statusinvest.com.br/etfs/spyi11",
+      "linkUrl": "https://statusinvest.com.br/etfs/spyi11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "5-fiagro-jgpx11",
+      "tipo": "FIAGRO",
+      "papel": "JGPX11",
+      "linkRaw": "https://statusinvest.com.br/fiagros/jgpx11",
+      "linkUrl": "https://statusinvest.com.br/fiagros/jgpx11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "6-fiagro-fgaa11",
+      "tipo": "FIAGRO",
+      "papel": "FGAA11",
+      "linkRaw": "https://statusinvest.com.br/fiagros/fgaa11",
+      "linkUrl": "https://statusinvest.com.br/fiagros/fgaa11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "7-fiagro-rura11",
+      "tipo": "FIAGRO",
+      "papel": "RURA11",
+      "linkRaw": "https://statusinvest.com.br/fiagros/rura11",
+      "linkUrl": "https://statusinvest.com.br/fiagros/rura11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "8-fiagro-knca11",
+      "tipo": "FIAGRO",
+      "papel": "KNCA11",
+      "linkRaw": "https://statusinvest.com.br/fiagros/knca11",
+      "linkUrl": "https://statusinvest.com.br/fiagros/knca11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "9-infra-bdif11",
+      "tipo": "INFRA",
+      "papel": "BDIF11",
+      "linkRaw": "https://statusinvest.com.br/infras/bdif11",
+      "linkUrl": "https://statusinvest.com.br/infras/bdif11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "10-infra-cpti11",
+      "tipo": "INFRA",
+      "papel": "CPTI11",
+      "linkRaw": "https://statusinvest.com.br/infras/cpti11",
+      "linkUrl": "https://statusinvest.com.br/infras/cpti11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "11-infra-bidb11",
+      "tipo": "INFRA",
+      "papel": "BIDB11",
+      "linkRaw": "https://statusinvest.com.br/infras/bidb11",
+      "linkUrl": "https://statusinvest.com.br/infras/bidb11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "12-infra-ifra11",
+      "tipo": "INFRA",
+      "papel": "IFRA11",
+      "linkRaw": "https://statusinvest.com.br/infras/ifra11",
+      "linkUrl": "https://statusinvest.com.br/infras/ifra11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "13-infra-cdii11",
+      "tipo": "INFRA",
+      "papel": "CDII11",
+      "linkRaw": "https://statusinvest.com.br/infras/cdii11",
+      "linkUrl": "https://statusinvest.com.br/infras/cdii11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "14-infra-juro11",
+      "tipo": "INFRA",
+      "papel": "JURO11",
+      "linkRaw": "https://statusinvest.com.br/infras/juro11",
+      "linkUrl": "https://statusinvest.com.br/infras/juro11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "15-papel-pcip11",
+      "tipo": "PAPEL",
+      "papel": "PCIP11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/pcip11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/pcip11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "16-papel-knsc11",
+      "tipo": "PAPEL",
+      "papel": "KNSC11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "17-papel-afhi11",
+      "tipo": "PAPEL",
+      "papel": "AFHI11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "18-papel-hgcr11",
+      "tipo": "PAPEL",
+      "papel": "HGCR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "19-papel-kncr11",
+      "tipo": "PAPEL",
+      "papel": "KNCR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/kncr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/kncr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "20-tijolo-trxf11",
+      "tipo": "TIJOLO",
+      "papel": "TRXF11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/trxf11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/trxf11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "21-tijolo-alzr11",
+      "tipo": "TIJOLO",
+      "papel": "ALZR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/alzr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/alzr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "22-tijolo-hglg11",
+      "tipo": "TIJOLO",
+      "papel": "HGLG11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hglg11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hglg11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "23-tijolo-hgru11",
+      "tipo": "TIJOLO",
+      "papel": "HGRU11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgru11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgru11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "24-tijolo-btlg11",
+      "tipo": "TIJOLO",
+      "papel": "BTLG11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/btlg11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/btlg11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "25-tijolo-hsml11",
+      "tipo": "TIJOLO",
+      "papel": "HSML11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hsml11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hsml11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "26-tijolo-xpml11",
+      "tipo": "TIJOLO",
+      "papel": "XPML11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/xpml11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/xpml11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "27-venda-urpr11",
+      "tipo": "VENDA",
+      "papel": "URPR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/urpr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/urpr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "28-venda-gcra11",
+      "tipo": "VENDA",
+      "papel": "GCRA11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/gcra11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/gcra11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "29-venda-ibcr11",
+      "tipo": "VENDA",
+      "papel": "IBCR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/ibcr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/ibcr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "30-venda-rbrp11",
+      "tipo": "VENDA",
+      "papel": "RBRP11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrp11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrp11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "31-venda-brcr11",
+      "tipo": "VENDA",
+      "papel": "BRCR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/brcr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/brcr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "32-venda-btra11",
+      "tipo": "VENDA",
+      "papel": "BTRA11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/btra11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/btra11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "33-venda-fyto11",
+      "tipo": "VENDA",
+      "papel": "FYTO11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/fyto11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/fyto11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "34-venda-rbrr11",
+      "tipo": "VENDA",
+      "papel": "RBRR11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrr11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrr11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "35-venda-gcri11",
+      "tipo": "VENDA",
+      "papel": "GCRI11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/gcri11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/gcri11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "36-venda-alug11",
+      "tipo": "VENDA",
+      "papel": "ALUG11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/alug11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/alug11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "37-venda-rbrl11",
+      "tipo": "VENDA",
+      "papel": "RBRL11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrl11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrl11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "38-venda-hgre11",
+      "tipo": "VENDA",
+      "papel": "HGRE11",
+      "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgre11",
+      "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgre11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    },
+    {
+      "id": "39-venda-bodb11",
+      "tipo": "VENDA",
+      "papel": "BODB11",
+      "linkRaw": "https://statusinvest.com.br/infras/bodb11",
+      "linkUrl": "https://statusinvest.com.br/infras/bodb11",
+      "linkDisplay": "Link",
+      "linkStatus": "valid"
+    }
+  ]
+}
