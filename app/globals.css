@@ -1,0 +1,176 @@
+:root {
+  --bg: #f2efe7;
+  --card: #fffdf9;
+  --ink: #1f2a37;
+  --muted: #67738a;
+  --line: #d8d0c4;
+  --accent: #0f7b6c;
+  --accent-2: #d66f2a;
+  --danger: #b63b32;
+  --info: #2a4f9f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 15% 5%, #fff9ec, var(--bg) 48%);
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.refresh-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.75rem 1.1rem;
+  background: linear-gradient(135deg, var(--accent), #1ba089);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.meta {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.status {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid transparent;
+}
+
+.status-success {
+  background: #e8f7f3;
+  border-color: #9edbcf;
+}
+
+.status-error {
+  background: #fdeceb;
+  border-color: #f2b5b0;
+  color: var(--danger);
+}
+
+.status-info {
+  background: #edf2fe;
+  border-color: #b8c8f6;
+  color: var(--info);
+}
+
+.table-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: auto;
+}
+
+.funds-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.funds-table th,
+.funds-table td {
+  text-align: left;
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid #ece5d9;
+  vertical-align: top;
+}
+
+.funds-table th {
+  background: #faf6ef;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.funds-table tr:last-child td {
+  border-bottom: none;
+}
+
+.funds-table a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.funds-table a:hover {
+  text-decoration: underline;
+}
+
+.truncate-cell {
+  max-width: 320px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.loading {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .funds-table th,
+  .funds-table td {
+    padding: 0.65rem 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .truncate-cell {
+    max-width: 180px;
+  }
+}
