@@ -15,7 +15,13 @@ describe("table responsive basics", () => {
             linkRaw: "https://example.com",
             linkUrl: "https://example.com",
             linkDisplay: "Link",
-            linkStatus: "valid"
+            linkStatus: "valid",
+            quoteValorAtual: null,
+            quoteMin52Semanas: null,
+            quoteMax52Semanas: null,
+            quoteStatus: "not_collected",
+            quoteUpdatedAt: null,
+            quoteFailureReason: null
           }
         ]}
       />
@@ -38,7 +44,13 @@ describe("table responsive basics", () => {
             linkRaw: "abc",
             linkUrl: null,
             linkDisplay: "Link indisponivel",
-            linkStatus: "invalid"
+            linkStatus: "invalid",
+            quoteValorAtual: null,
+            quoteMin52Semanas: null,
+            quoteMax52Semanas: null,
+            quoteStatus: "not_collected",
+            quoteUpdatedAt: null,
+            quoteFailureReason: null
           }
         ]}
       />
@@ -61,7 +73,13 @@ describe("table responsive basics", () => {
             linkRaw: longUrl,
             linkUrl: longUrl,
             linkDisplay: longUrl,
-            linkStatus: "valid"
+            linkStatus: "valid",
+            quoteValorAtual: null,
+            quoteMin52Semanas: null,
+            quoteMax52Semanas: null,
+            quoteStatus: "not_collected",
+            quoteUpdatedAt: null,
+            quoteFailureReason: null
           }
         ]}
       />

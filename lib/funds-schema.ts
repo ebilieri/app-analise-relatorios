@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export type LinkStatus = "valid" | "invalid" | "empty";
+export type QuoteStatus = "not_collected" | "updated" | "failed";
 
 export const fundRecordSchema = z.object({
   id: z.string(),
@@ -9,7 +10,13 @@ export const fundRecordSchema = z.object({
   linkRaw: z.string().nullable(),
   linkUrl: z.string().url().nullable(),
   linkDisplay: z.string(),
-  linkStatus: z.enum(["valid", "invalid", "empty"])
+  linkStatus: z.enum(["valid", "invalid", "empty"]),
+  quoteValorAtual: z.string().nullable().default(null),
+  quoteMin52Semanas: z.string().nullable().default(null),
+  quoteMax52Semanas: z.string().nullable().default(null),
+  quoteStatus: z.enum(["not_collected", "updated", "failed"]).default("not_collected"),
+  quoteUpdatedAt: z.string().nullable().default(null),
+  quoteFailureReason: z.string().nullable().default(null)
 });
 
 export type FundRecord = z.infer<typeof fundRecordSchema>;

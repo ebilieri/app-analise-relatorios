@@ -1,8 +1,9 @@
 import { buildFundRecord, dbSchema, type FundsDb, type FundRecord } from "./funds-schema";
 import { dbFileExists, readDb, writeDbAtomic } from "./json-store";
 import { readSpreadsheetRows } from "./spreadsheet-reader";
+import { isWriteInProgress, setWriteInProgress } from "./write-lock";
 
-let refreshInProgress = false;
+
 
 export type RefreshResult = {
   status: "success" | "failed" | "blocked";
@@ -73,11 +74,11 @@ export async function listFunds(): Promise<FundsDb> {
 }
 
 export async function refreshFunds(): Promise<RefreshResult> {
-  if (refreshInProgress) {
+  if (isWriteInProgress()) {
     return { status: "blocked", message: "Atualizacao ja em andamento" };
   }
 
-  refreshInProgress = true;
+  setWriteInProgress(true);
   try {
     const payload = await generateDbFromSpreadsheet();
     return {
@@ -92,6 +93,6 @@ export async function refreshFunds(): Promise<RefreshResult> {
       message: error instanceof Error ? error.message : "Falha ao atualizar JSON a partir da planilha"
     };
   } finally {
-    refreshInProgress = false;
+    setWriteInProgress(false);
   }
 }
