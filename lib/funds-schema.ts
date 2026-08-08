@@ -81,7 +81,7 @@ export function buildFundRecord(row: RowInput, index: number): FundRecord | null
     papel,
     linkRaw,
     linkUrl,
-    linkDisplay: linkStatus === "valid" ? "Link" : "Link indisponivel",
+    linkDisplay: linkStatus === "valid" ? linkRawValue : "Link indisponivel",
     linkStatus
   });
 }

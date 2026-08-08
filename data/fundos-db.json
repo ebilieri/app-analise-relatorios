@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-08T01:49:18.377Z",
+  "generatedAt": "2026-08-08T02:06:55.869Z",
   "sourceFile": "fundos-para-analise.xlsx",
   "rowCount": 39,
   "discardedCount": 0,
@@ -11,7 +11,7 @@
       "papel": "COIN11",
       "linkRaw": "https://statusinvest.com.br/etfs/coin11",
       "linkUrl": "https://statusinvest.com.br/etfs/coin11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/etfs/coin11",
       "linkStatus": "valid"
     },
     {
@@ -20,7 +20,7 @@
       "papel": "QQQI11",
       "linkRaw": "https://statusinvest.com.br/etfs/qqqi11",
       "linkUrl": "https://statusinvest.com.br/etfs/qqqi11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/etfs/qqqi11",
       "linkStatus": "valid"
     },
     {
@@ -29,7 +29,7 @@
       "papel": "WRLD11",
       "linkRaw": "https://statusinvest.com.br/etfs/wrld11",
       "linkUrl": "https://statusinvest.com.br/etfs/wrld11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/etfs/wrld11",
       "linkStatus": "valid"
     },
     {
@@ -38,7 +38,7 @@
       "papel": "SPYI11",
       "linkRaw": "https://statusinvest.com.br/etfs/spyi11",
       "linkUrl": "https://statusinvest.com.br/etfs/spyi11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/etfs/spyi11",
       "linkStatus": "valid"
     },
     {
@@ -47,7 +47,7 @@
       "papel": "JGPX11",
       "linkRaw": "https://statusinvest.com.br/fiagros/jgpx11",
       "linkUrl": "https://statusinvest.com.br/fiagros/jgpx11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fiagros/jgpx11",
       "linkStatus": "valid"
     },
     {
@@ -56,7 +56,7 @@
       "papel": "FGAA11",
       "linkRaw": "https://statusinvest.com.br/fiagros/fgaa11",
       "linkUrl": "https://statusinvest.com.br/fiagros/fgaa11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fiagros/fgaa11",
       "linkStatus": "valid"
     },
     {
@@ -65,7 +65,7 @@
       "papel": "RURA11",
       "linkRaw": "https://statusinvest.com.br/fiagros/rura11",
       "linkUrl": "https://statusinvest.com.br/fiagros/rura11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fiagros/rura11",
       "linkStatus": "valid"
     },
     {
@@ -74,7 +74,7 @@
       "papel": "KNCA11",
       "linkRaw": "https://statusinvest.com.br/fiagros/knca11",
       "linkUrl": "https://statusinvest.com.br/fiagros/knca11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fiagros/knca11",
       "linkStatus": "valid"
     },
     {
@@ -83,7 +83,7 @@
       "papel": "BDIF11",
       "linkRaw": "https://statusinvest.com.br/infras/bdif11",
       "linkUrl": "https://statusinvest.com.br/infras/bdif11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/bdif11",
       "linkStatus": "valid"
     },
     {
@@ -92,7 +92,7 @@
       "papel": "CPTI11",
       "linkRaw": "https://statusinvest.com.br/infras/cpti11",
       "linkUrl": "https://statusinvest.com.br/infras/cpti11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/cpti11",
       "linkStatus": "valid"
     },
     {
@@ -101,7 +101,7 @@
       "papel": "BIDB11",
       "linkRaw": "https://statusinvest.com.br/infras/bidb11",
       "linkUrl": "https://statusinvest.com.br/infras/bidb11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/bidb11",
       "linkStatus": "valid"
     },
     {
@@ -110,7 +110,7 @@
       "papel": "IFRA11",
       "linkRaw": "https://statusinvest.com.br/infras/ifra11",
       "linkUrl": "https://statusinvest.com.br/infras/ifra11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/ifra11",
       "linkStatus": "valid"
     },
     {
@@ -119,7 +119,7 @@
       "papel": "CDII11",
       "linkRaw": "https://statusinvest.com.br/infras/cdii11",
       "linkUrl": "https://statusinvest.com.br/infras/cdii11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/cdii11",
       "linkStatus": "valid"
     },
     {
@@ -128,7 +128,7 @@
       "papel": "JURO11",
       "linkRaw": "https://statusinvest.com.br/infras/juro11",
       "linkUrl": "https://statusinvest.com.br/infras/juro11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/juro11",
       "linkStatus": "valid"
     },
     {
@@ -137,7 +137,7 @@
       "papel": "PCIP11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/pcip11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/pcip11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/pcip11",
       "linkStatus": "valid"
     },
     {
@@ -146,7 +146,7 @@
       "papel": "KNSC11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
       "linkStatus": "valid"
     },
     {
@@ -155,7 +155,7 @@
       "papel": "AFHI11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
       "linkStatus": "valid"
     },
     {
@@ -164,7 +164,7 @@
       "papel": "HGCR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
       "linkStatus": "valid"
     },
     {
@@ -173,7 +173,7 @@
       "papel": "KNCR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/kncr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/kncr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/kncr11",
       "linkStatus": "valid"
     },
     {
@@ -182,7 +182,7 @@
       "papel": "TRXF11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/trxf11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/trxf11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/trxf11",
       "linkStatus": "valid"
     },
     {
@@ -191,7 +191,7 @@
       "papel": "ALZR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/alzr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/alzr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/alzr11",
       "linkStatus": "valid"
     },
     {
@@ -200,7 +200,7 @@
       "papel": "HGLG11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hglg11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hglg11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/hglg11",
       "linkStatus": "valid"
     },
     {
@@ -209,7 +209,7 @@
       "papel": "HGRU11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgru11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgru11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/hgru11",
       "linkStatus": "valid"
     },
     {
@@ -218,7 +218,7 @@
       "papel": "BTLG11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/btlg11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/btlg11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/btlg11",
       "linkStatus": "valid"
     },
     {
@@ -227,7 +227,7 @@
       "papel": "HSML11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hsml11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hsml11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/hsml11",
       "linkStatus": "valid"
     },
     {
@@ -236,7 +236,7 @@
       "papel": "XPML11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/xpml11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/xpml11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/xpml11",
       "linkStatus": "valid"
     },
     {
@@ -245,7 +245,7 @@
       "papel": "URPR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/urpr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/urpr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/urpr11",
       "linkStatus": "valid"
     },
     {
@@ -254,7 +254,7 @@
       "papel": "GCRA11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/gcra11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/gcra11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/gcra11",
       "linkStatus": "valid"
     },
     {
@@ -263,7 +263,7 @@
       "papel": "IBCR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/ibcr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/ibcr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/ibcr11",
       "linkStatus": "valid"
     },
     {
@@ -272,7 +272,7 @@
       "papel": "RBRP11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrp11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrp11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/rbrp11",
       "linkStatus": "valid"
     },
     {
@@ -281,7 +281,7 @@
       "papel": "BRCR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/brcr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/brcr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/brcr11",
       "linkStatus": "valid"
     },
     {
@@ -290,7 +290,7 @@
       "papel": "BTRA11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/btra11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/btra11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/btra11",
       "linkStatus": "valid"
     },
     {
@@ -299,7 +299,7 @@
       "papel": "FYTO11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/fyto11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/fyto11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/fyto11",
       "linkStatus": "valid"
     },
     {
@@ -308,7 +308,7 @@
       "papel": "RBRR11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrr11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrr11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/rbrr11",
       "linkStatus": "valid"
     },
     {
@@ -317,7 +317,7 @@
       "papel": "GCRI11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/gcri11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/gcri11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/gcri11",
       "linkStatus": "valid"
     },
     {
@@ -326,7 +326,7 @@
       "papel": "ALUG11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/alug11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/alug11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/alug11",
       "linkStatus": "valid"
     },
     {
@@ -335,7 +335,7 @@
       "papel": "RBRL11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/rbrl11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/rbrl11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/rbrl11",
       "linkStatus": "valid"
     },
     {
@@ -344,7 +344,7 @@
       "papel": "HGRE11",
       "linkRaw": "https://statusinvest.com.br/fundos-imobiliarios/hgre11",
       "linkUrl": "https://statusinvest.com.br/fundos-imobiliarios/hgre11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/fundos-imobiliarios/hgre11",
       "linkStatus": "valid"
     },
     {
@@ -353,7 +353,7 @@
       "papel": "BODB11",
       "linkRaw": "https://statusinvest.com.br/infras/bodb11",
       "linkUrl": "https://statusinvest.com.br/infras/bodb11",
-      "linkDisplay": "Link",
+      "linkDisplay": "https://statusinvest.com.br/infras/bodb11",
       "linkStatus": "valid"
     }
   ]

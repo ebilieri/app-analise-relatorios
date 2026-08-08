@@ -15,4 +15,11 @@ describe("link validation", () => {
     expect(invalid?.linkStatus).toBe("invalid");
     expect(invalid?.linkDisplay).toBe("Link indisponivel");
   });
+
+  it("uses the normalized url as visible text when link is valid", () => {
+    const valid = buildFundRecord({ Tipo: "FII", Papel: "ABCD11", Link: "  https://site.com/fundo  " }, 2);
+    expect(valid?.linkStatus).toBe("valid");
+    expect(valid?.linkUrl).toBe("https://site.com/fundo");
+    expect(valid?.linkDisplay).toBe("https://site.com/fundo");
+  });
 });

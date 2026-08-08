@@ -24,7 +24,7 @@ export function FundosTable({ rows }: Readonly<FundosTableProps>) {
               <td className="truncate-cell" title={row.linkRaw ?? "Link indisponivel"}>
                 {row.linkStatus === "valid" && row.linkUrl ? (
                   <a href={row.linkUrl} target="_blank" rel="noreferrer">
-                    Link
+                    {row.linkUrl}
                   </a>
                 ) : (
                   <span className="muted">Link indisponivel</span>

@@ -12,6 +12,7 @@ Os dados exibidos na interface sao carregados a partir de um arquivo JSON local.
 
 - Leitura da planilha `fundos-para-analise.xlsx`
 - Exibicao dos dados em tabela na tela inicial
+- Exibicao da propria URL como texto visivel para links validos
 - Renderizacao de links validos como hyperlink clicavel
 - Exibicao de `Link indisponivel` para links vazios ou invalidos
 - Atualizacao manual do cache JSON

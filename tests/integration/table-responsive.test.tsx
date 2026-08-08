@@ -24,5 +24,51 @@ describe("table responsive basics", () => {
     expect(screen.getByRole("columnheader", { name: "Tipo" })).toBeInTheDocument();
     expect(screen.getByRole("columnheader", { name: "Papel" })).toBeInTheDocument();
     expect(screen.getByRole("columnheader", { name: "Link" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "https://example.com" })).toBeInTheDocument();
+  });
+
+  it("renders fallback text without hyperlink for invalid links", () => {
+    render(
+      <FundosTable
+        rows={[
+          {
+            id: "2",
+            tipo: "FII",
+            papel: "XPML11",
+            linkRaw: "abc",
+            linkUrl: null,
+            linkDisplay: "Link indisponivel",
+            linkStatus: "invalid"
+          }
+        ]}
+      />
+    );
+
+    expect(screen.getByText("Link indisponivel")).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Link indisponivel" })).not.toBeInTheDocument();
+  });
+
+  it("keeps long urls visible in the link cell", () => {
+    const longUrl = "https://example.com/fundos/imobiliarios/com-uma-url-bastante-longa/segmento/logistica/hglg11";
+
+    render(
+      <FundosTable
+        rows={[
+          {
+            id: "3",
+            tipo: "FII",
+            papel: "HGLG11",
+            linkRaw: longUrl,
+            linkUrl: longUrl,
+            linkDisplay: longUrl,
+            linkStatus: "valid"
+          }
+        ]}
+      />
+    );
+
+    const link = screen.getByRole("link", { name: longUrl });
+    expect(link).toBeInTheDocument();
+    expect(link.closest("td")).toHaveClass("truncate-cell");
   });
 });
