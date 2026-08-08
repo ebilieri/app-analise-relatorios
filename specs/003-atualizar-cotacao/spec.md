@@ -58,12 +58,13 @@ Como usuario, quero receber feedback claro quando algumas cotacoes nao puderem s
 
 **Acceptance Scenarios**:
 
-1. **Given** que uma ou mais paginas de referencia nao podem ser processadas, **When** a atualizacao de cotacao e executada, **Then** o sistema zera os tres campos de cotacao das linhas com falha e informa que houve falhas parciais.
-2. **Given** que parte das linhas foi atualizada com sucesso e outra parte falhou, **When** a operacao termina, **Then** o JSON reflete os sucessos confirmados e zera os tres campos de cotacao nas linhas com falha, registrando essas falhas no resultado final da execucao.
+1. **Given** que uma ou mais paginas de referencia nao podem ser processadas, **When** a atualizacao de cotacao e executada, **Then** o sistema zera os tres campos de valor de cotacao das linhas com falha (preservando `quoteUpdatedAt` do ultimo sucesso anterior, se existir) e informa que houve falhas parciais.
+2. **Given** que parte das linhas foi atualizada com sucesso e outra parte falhou, **When** a operacao termina, **Then** o JSON reflete os sucessos confirmados e zera os tres campos de valor de cotacao nas linhas com falha (preservando `quoteUpdatedAt` do ultimo sucesso anterior, se existir), registrando essas falhas no resultado final da execucao.
 
 ### Edge Cases
 
 - Linhas sem link valido para consulta externa sao ignoradas silenciosamente durante a atualizacao de cotacao, sem contar como falha no resumo final.
+- Quando `Atualizar dados` estiver em execucao, `Atualizar cotacao` MUST ser bloqueado (retorna 409), e vice-versa, pois ambas as operacoes escrevem no mesmo arquivo `data/fundos-db.json`.
 - Quando a pagina externa nao contem um ou mais valores esperados apos tentar todos os seletores fallback do campo, a linha e tratada como falha (campos zerados e falha registrada).
 - Quando a pagina externa demora mais que 10 segundos para responder, a requisicao e tratada como falha (timeout, sem retry automatico).
 - Uma nova atualizacao de cotacao nao pode ser iniciada enquanto outra atualizacao de cotacao ainda esta em execucao (ver FR-008).
@@ -78,7 +79,7 @@ Como usuario, quero receber feedback claro quando algumas cotacoes nao puderem s
 - **FR-003**: O sistema MUST percorrer os registros com links validos e tentar obter os dados de cotacao correspondentes de cada pagina de referencia, processando um link por vez em sequencia.
 - **FR-004**: O sistema MUST armazenar no JSON os campos `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` para cada registro atualizado com sucesso.
 - **FR-005**: O sistema MUST exibir na tabela as colunas `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas`.
-- **FR-006**: O sistema MUST zerar os campos `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` quando uma linha nao puder ter a cotacao atualizada.
+- **FR-006**: O sistema MUST zerar os campos `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` quando uma linha nao puder ter a cotacao atualizada, e MUST atualizar `quoteStatus` para `"failed"` e `quoteFailureReason` com o motivo da falha no registro persistido no JSON.
 - **FR-007**: O sistema MUST informar ao usuario o resultado da operacao de atualizacao de cotacao, incluindo sucesso total, sucesso parcial ou falha.
 - **FR-008**: O sistema MUST impedir que uma nova atualizacao de cotacao seja iniciada enquanto outra atualizacao de cotacao estiver em execucao.
 - **FR-009**: O sistema MUST exibir estado vazio ou indicacao clara quando os campos de cotacao ainda nao estiverem disponiveis para uma linha.
@@ -92,7 +93,7 @@ Como usuario, quero receber feedback claro quando algumas cotacoes nao puderem s
 - **NFR-001 (Code Quality)**: A feature MUST passar validacoes de qualidade sem issues bloqueantes.
 - **NFR-002 (Testing Standard)**: A feature MUST incluir testes para atualizacao assincrona de cotacoes, persistencia no JSON, exibicao das novas colunas e tratamento de falhas parciais.
 - **NFR-003 (UX Consistency)**: O botao novo, os estados de carregamento e as mensagens de feedback MUST seguir o padrao visual e textual existente da aplicacao.
-- **NFR-004 (Performance)**: A atualizacao de cotacao MUST aplicar timeout de 10 segundos por requisicao (sem retry automatico) e concluir o processamento sequencial de todas as linhas em tempo compativel com o volume esperado da tabela, sem bloquear permanentemente a interface.
+- **NFR-004 (Performance)**: A atualizacao de cotacao MUST aplicar timeout de 10 segundos por requisicao (sem retry automatico) e MUST concluir o processamento sequencial de todas as linhas em no maximo 420 segundos (~7 minutos) para o volume maximo esperado de 42 linhas com link valido (42 x 10s de timeout + overhead), sem bloquear permanentemente a interface.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -109,7 +110,7 @@ Como usuario, quero receber feedback claro quando algumas cotacoes nao puderem s
 - **SC-003**: Em caso de falha parcial, 100% das linhas com falha ficam com os tres campos de cotacao zerados no JSON e aparecem no resumo de falhas da execucao.
 - **SC-004**: O usuario recebe feedback visivel ao final da operacao de atualizacao de cotacao em todos os cenarios principais.
 - **SC-005**: A entrega nao possui bloqueios nos checks obrigatorios de qualidade.
-- **SC-006**: A atualizacao de cotacao permanece dentro do orcamento de tempo definido no planejamento da feature.
+- **SC-006**: A atualizacao de cotacao conclui em no maximo 420 segundos (~7 minutos) para o volume maximo esperado de 42 linhas com link valido, medido pela diferenca `finishedAt - startedAt` retornada pela API `POST /api/cotacao`.
 
 ## Assumptions
 
