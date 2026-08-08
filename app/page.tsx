@@ -19,10 +19,19 @@ type RefreshResponse = {
   generatedAt?: string;
 };
 
+type QuoteResponse = {
+  status: "success" | "partial" | "failed" | "blocked";
+  message: string;
+  updatedCount?: number;
+  failedCount?: number;
+  skippedCount?: number;
+};
+
 export default function HomePage() {
   const [rows, setRows] = useState<FundRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [busyRefresh, setBusyRefresh] = useState(false);
+  const [busyQuote, setBusyQuote] = useState(false);
   const [message, setMessage] = useState<{ tone: "success" | "error" | "info"; text: string } | null>(null);
   const [generatedAt, setGeneratedAt] = useState<string | null>(null);
 
@@ -79,6 +88,39 @@ export default function HomePage() {
     }
   }, [loadFunds]);
 
+  const updateQuote = useCallback(async () => {
+    setBusyQuote(true);
+    try {
+      const response = await fetch("/api/cotacao", { method: "POST" });
+      const payload = (await response.json()) as QuoteResponse;
+
+      if (response.status === 409 || payload.status === "blocked") {
+        setMessage({ tone: "info", text: payload.message || "Atualizacao ja em andamento" });
+        return;
+      }
+
+      if (!response.ok || payload.status === "failed") {
+        setMessage({ tone: "error", text: payload.message || "Falha ao atualizar cotacoes" });
+        return;
+      }
+
+      if (payload.status === "partial") {
+        const failed = payload.failedCount ?? 0;
+        setMessage({
+          tone: "info",
+          text: payload.message || `Cotacoes atualizadas com ${failed} falha(s)`,
+        });
+      } else {
+        setMessage({ tone: "success", text: payload.message || "Cotacoes atualizadas com sucesso" });
+      }
+      await loadFunds();
+    } catch {
+      setMessage({ tone: "error", text: "Falha ao atualizar cotacoes" });
+    } finally {
+      setBusyQuote(false);
+    }
+  }, [loadFunds]);
+
   useEffect(() => {
     void loadFunds();
   }, [loadFunds]);
@@ -88,6 +130,8 @@ export default function HomePage() {
     return new Date(generatedAt).toLocaleString("pt-BR");
   }, [generatedAt]);
 
+  const anyBusy = busyRefresh || busyQuote;
+
   return (
     <main className="page">
       <header className="hero">
@@ -95,9 +139,14 @@ export default function HomePage() {
           <h1>Analise de Fundos</h1>
           <p>Visualizacao em tabela com cache JSON e atualizacao manual da planilha.</p>
         </div>
-        <button type="button" onClick={refresh} disabled={busyRefresh} className="refresh-btn">
-          {busyRefresh ? "Atualizando..." : "Atualizar dados"}
-        </button>
+        <div className="hero-actions">
+          <button type="button" onClick={refresh} disabled={anyBusy} className="refresh-btn">
+            {busyRefresh ? "Atualizando..." : "Atualizar dados"}
+          </button>
+          <button type="button" onClick={updateQuote} disabled={anyBusy} className="refresh-btn">
+            {busyQuote ? "Atualizando cotacao..." : "Atualizar cotacao"}
+          </button>
+        </div>
       </header>
 
       {message ? <StatusBanner tone={message.tone} message={message.text} /> : null}

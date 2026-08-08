@@ -1,12 +1,13 @@
 # App Analise Relatorios
 
-Aplicacao web em Next.js para visualizar dados da planilha `fundos-para-analise.xlsx` em uma tabela com as colunas `Tipo`, `Papel` e `Link`.
+Aplicacao web em Next.js para visualizar dados da planilha `fundos-para-analise.xlsx` em uma tabela com as colunas `Tipo`, `Papel`, `Link`, `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas`.
 
 Os dados exibidos na interface sao carregados a partir de um arquivo JSON local. Na inicializacao da aplicacao:
 
 - se `data/fundos-db.json` existir, a aplicacao usa esse arquivo como fonte de dados;
 - se o arquivo nao existir, a aplicacao tenta gerar o JSON a partir da planilha;
-- a interface tambem oferece uma acao manual para atualizar o JSON com base na planilha.
+- a interface oferece uma acao manual para atualizar o JSON com base na planilha;
+- a interface oferece uma acao manual para atualizar as cotacoes via web scraping do statusinvest.
 
 ## Funcionalidades
 
@@ -15,8 +16,11 @@ Os dados exibidos na interface sao carregados a partir de um arquivo JSON local.
 - Exibicao da propria URL como texto visivel para links validos
 - Renderizacao de links validos como hyperlink clicavel
 - Exibicao de `Link indisponivel` para links vazios ou invalidos
-- Atualizacao manual do cache JSON
-- Bloqueio de atualizacoes concorrentes
+- Atualizacao manual do cache JSON (`Atualizar dados`)
+- Atualizacao de cotacoes via web scraping (`Atualizar cotacao`): extrai `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` do statusinvest para cada linha com link valido
+- Exibicao das tres colunas de cotacao na tabela; linhas sem cotacao coletada exibem `-`
+- Politica de falha: linhas que falham durante a atualizacao de cotacao ficam com os campos zerados e o motivo da falha registrado no JSON; o processo continua para as demais linhas
+- Bloqueio de atualizacoes concorrentes (escrita mutuamente exclusiva no JSON)
 
 ## Tecnologias
 
@@ -24,6 +28,7 @@ Os dados exibidos na interface sao carregados a partir de um arquivo JSON local.
 - React 18
 - TypeScript
 - `xlsx` para leitura da planilha
+- `cheerio` para parsing de HTML do scraping
 - `zod` para validacao dos dados
 - Vitest para testes unitarios e de integracao
 - Playwright para testes E2E
@@ -132,6 +137,7 @@ app/
 	api/
 		fundos/
 		refresh/
+		cotacao/         # POST — atualiza cotacoes via scraping
 	globals.css
 	layout.tsx
 	page.tsx
@@ -143,7 +149,11 @@ lib/
 	funds-schema.ts
 	funds-service.ts
 	json-store.ts
+	quote-selectors.ts   # seletores CSS fallback por campo (statusinvest)
+	quote-scraper.ts     # fetch + cheerio, timeout 10s por URL
+	quote-service.ts     # orquestracao sequencial + lock
 	spreadsheet-reader.ts
+	write-lock.ts        # lock compartilhado entre refresh e cotacao
 data/
 tests/
 specs/

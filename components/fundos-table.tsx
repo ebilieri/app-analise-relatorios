@@ -5,6 +5,13 @@ type FundosTableProps = {
   rows: FundRecord[];
 };
 
+function renderQuoteCell(value: string | null, status: FundRecord["quoteStatus"]) {
+  if (status === "updated" && value) {
+    return <span>{value}</span>;
+  }
+  return <span className="muted">-</span>;
+}
+
 export function FundosTable({ rows }: Readonly<FundosTableProps>) {
   return (
     <div className="table-wrap">
@@ -14,6 +21,9 @@ export function FundosTable({ rows }: Readonly<FundosTableProps>) {
             <th>Tipo</th>
             <th>Papel</th>
             <th>Link</th>
+            <th>Valor Atual</th>
+            <th>Min. 52 Semanas</th>
+            <th>Max. 52 Semanas</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +40,9 @@ export function FundosTable({ rows }: Readonly<FundosTableProps>) {
                   <span className="muted">Link indisponivel</span>
                 )}
               </td>
+              <td>{renderQuoteCell(row.quoteValorAtual, row.quoteStatus)}</td>
+              <td>{renderQuoteCell(row.quoteMin52Semanas, row.quoteStatus)}</td>
+              <td>{renderQuoteCell(row.quoteMax52Semanas, row.quoteStatus)}</td>
             </tr>
           ))}
         </tbody>

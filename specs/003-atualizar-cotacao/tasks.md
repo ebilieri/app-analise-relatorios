@@ -15,7 +15,7 @@
 
 **Purpose**: Adicionar dependencia de producao necessaria para o scraping.
 
-- [ ] T001 Instalar dependencia `cheerio` com `npm install cheerio` (cheerio >=1.0 inclui tipos TypeScript proprios — `@types/cheerio` nao e necessario)
+- [X] T001 Instalar dependencia `cheerio` com `npm install cheerio` (cheerio >=1.0 inclui tipos TypeScript proprios — `@types/cheerio` nao e necessario)
 
 **Checkpoint**: `package.json` e `package-lock.json` atualizados com `cheerio` em `dependencies`.
 
@@ -27,9 +27,9 @@
 
 **CRITICO**: Nenhum trabalho de user story pode comecar ate esta fase estar completa.
 
-- [ ] T002 Estender `fundRecordSchema` em `lib/funds-schema.ts` para incluir os 6 novos campos de cotacao (`quoteValorAtual`, `quoteMin52Semanas`, `quoteMax52Semanas`, `quoteStatus`, `quoteUpdatedAt`, `quoteFailureReason`) todos opcionais/nullable com defaults conforme `data-model.md`; exportar o tipo `QuoteStatus`
-- [ ] T003 [P] Criar `lib/quote-selectors.ts` com as listas de seletores CSS fallback (em ordem de prioridade) para os campos `valorAtual`, `min52Semanas` e `max52Semanas` da pagina statusinvest — baseado na estrutura observada da pagina; exportar `QUOTE_SELECTORS` como const
-- [ ] T004 Atualizar `lib/funds-service.ts` para implementar lock compartilhado entre `refreshFunds` e a futura `updateQuotes`: exportar uma flag `writeInProgress` (ou mecanismo equivalente) que impeca escrita concorrente no `fundos-db.json` por ambas as operacoes
+- [X] T002 Estender `fundRecordSchema` em `lib/funds-schema.ts` para incluir os 6 novos campos de cotacao (`quoteValorAtual`, `quoteMin52Semanas`, `quoteMax52Semanas`, `quoteStatus`, `quoteUpdatedAt`, `quoteFailureReason`) todos opcionais/nullable com defaults conforme `data-model.md`; exportar o tipo `QuoteStatus`
+- [X] T003 [P] Criar `lib/quote-selectors.ts` com as listas de seletores CSS fallback (em ordem de prioridade) para os campos `valorAtual`, `min52Semanas` e `max52Semanas` da pagina statusinvest — baseado na estrutura observada da pagina; exportar `QUOTE_SELECTORS` como const
+- [X] T004 Atualizar `lib/funds-service.ts` para implementar lock compartilhado entre `refreshFunds` e a futura `updateQuotes`: exportar uma flag `writeInProgress` (ou mecanismo equivalente) que impeca escrita concorrente no `fundos-db.json` por ambas as operacoes
 
 **Checkpoint**: Schema estendido, seletores definidos, mecanismo de lock atualizado — pronto para implementacao das user stories.
 
@@ -43,15 +43,15 @@
 
 ### Tests para User Story 1
 
-- [ ] T005 [P] [US1] Criar `tests/unit/quote-scraper.test.ts` com testes unitarios (fetch mockado via `vi.stubGlobal`): sucesso com seletor primario; sucesso com seletor fallback (seletor primario vazio); falha por timeout (AbortError); falha por erro HTTP (4xx/5xx); falha por nenhum seletor encontrar valor (todos os campos null); normalizacao de texto (trim de espacos)
-- [ ] T006 [P] [US1] Criar `tests/integration/quote-service.test.ts` com testes de integracao (fetch e `writeDbAtomic` mockados): execucao sequencial com todos os links validos bem-sucedidos (`status: "success"`); execucao com falha parcial (`status: "partial"`, campos zerados na linha com falha, linha aparece em `failures[]`); execucao com lock ativo retorna `status: "blocked"`; linhas sem link valido contabilizadas em `skippedCount` sem aparecer em `failures[]`
+- [X] T005 [P] [US1] Criar `tests/unit/quote-scraper.test.ts` com testes unitarios (fetch mockado via `vi.stubGlobal`): sucesso com seletor primario; sucesso com seletor fallback (seletor primario vazio); falha por timeout (AbortError); falha por erro HTTP (4xx/5xx); falha por nenhum seletor encontrar valor (todos os campos null); normalizacao de texto (trim de espacos)
+- [X] T006 [P] [US1] Criar `tests/integration/quote-service.test.ts` com testes de integracao (fetch e `writeDbAtomic` mockados): execucao sequencial com todos os links validos bem-sucedidos (`status: "success"`); execucao com falha parcial (`status: "partial"`, campos zerados na linha com falha, linha aparece em `failures[]`); execucao com lock ativo retorna `status: "blocked"`; linhas sem link valido contabilizadas em `skippedCount` sem aparecer em `failures[]`
 
 ### Implementacao User Story 1
 
-- [ ] T007 [US1] Criar `lib/quote-scraper.ts`: funcao `scrapeQuote(url: string): Promise<CotacaoAtualizada>` usando `fetch` nativo com `AbortController` (timeout 10s), carregando HTML com `cheerio.load`, aplicando os seletores de `lib/quote-selectors.ts` na ordem de prioridade por campo; retornar `{ success: true, valorAtual, min52Semanas, max52Semanas }` ou `{ success: false, failureReason }` conforme `data-model.md`
-- [ ] T008 [US1] Criar `lib/quote-service.ts`: funcao `updateQuotes(): Promise<ResultadoAtualizacaoCotacao>` que (1) verifica lock compartilhado de T004; (2) faz loop `for...of` sequencial sobre os registros com `linkStatus === "valid"`; (3) aplica `scrapeQuote` por linha; (4) em sucesso: preenche os 3 campos + `quoteStatus: "updated"` + `quoteUpdatedAt`; (5) em falha: zera os 3 campos + `quoteStatus: "failed"` + `quoteFailureReason`; (6) ignora silenciosamente linhas sem link valido (conta em `skippedCount`); (7) persiste o JSON atualizado via `writeDbAtomic`; retornar `ResultadoAtualizacaoCotacao` conforme `data-model.md`
-- [ ] T009 [US1] Criar `app/api/cotacao/route.ts`: handler `POST` que chama `updateQuotes()`, retorna 409 para `status: "blocked"`, 500 para `status: "failed"`, 200 para `status: "success"` ou `"partial"` — seguindo o mesmo padrao de `app/api/refresh/route.ts`
-- [ ] T010 [US1] Validar gates de constituicao da US1: executar `npm run typecheck`, `npm run lint`, `npm run test` (somente os novos testes unitarios e de integracao de US1) e confirmar que todos passam; ajustar quaisquer erros antes de prosseguir
+- [X] T007 [US1] Criar `lib/quote-scraper.ts`: funcao `scrapeQuote(url: string): Promise<CotacaoAtualizada>` usando `fetch` nativo com `AbortController` (timeout 10s), carregando HTML com `cheerio.load`, aplicando os seletores de `lib/quote-selectors.ts` na ordem de prioridade por campo; retornar `{ success: true, valorAtual, min52Semanas, max52Semanas }` ou `{ success: false, failureReason }` conforme `data-model.md`
+- [X] T008 [US1] Criar `lib/quote-service.ts`: funcao `updateQuotes(): Promise<ResultadoAtualizacaoCotacao>` que (1) verifica lock compartilhado de T004; (2) faz loop `for...of` sequencial sobre os registros com `linkStatus === "valid"`; (3) aplica `scrapeQuote` por linha; (4) em sucesso: preenche os 3 campos + `quoteStatus: "updated"` + `quoteUpdatedAt`; (5) em falha: zera os 3 campos + `quoteStatus: "failed"` + `quoteFailureReason`; (6) ignora silenciosamente linhas sem link valido (conta em `skippedCount`); (7) persiste o JSON atualizado via `writeDbAtomic`; retornar `ResultadoAtualizacaoCotacao` conforme `data-model.md`
+- [X] T009 [US1] Criar `app/api/cotacao/route.ts`: handler `POST` que chama `updateQuotes()`, retorna 409 para `status: "blocked"`, 500 para `status: "failed"`, 200 para `status: "success"` ou `"partial"` — seguindo o mesmo padrao de `app/api/refresh/route.ts`
+- [X] T010 [US1] Validar gates de constituicao da US1: executar `npm run typecheck`, `npm run lint`, `npm run test` (somente os novos testes unitarios e de integracao de US1) e confirmar que todos passam; ajustar quaisquer erros antes de prosseguir
 
 **Checkpoint**: Backend de scraping completo e testado. `POST /api/cotacao` funcional. US1 verificavel via `curl` ou chamada manual.
 
@@ -65,14 +65,14 @@
 
 ### Tests para User Story 2
 
-- [ ] T011 [P] [US2] Estender `tests/unit/funds-schema.test.ts` (ou criar `tests/unit/quote-fields.test.ts`) com testes: `dbSchema.parse(...)` preserva os 6 novos campos (sem strip); registro com campos de cotacao `null` passa validacao sem erros; `quoteStatus` aceita somente os valores enum definidos
-- [ ] T012 [P] [US2] Criar `tests/integration/table-quote-columns.test.tsx` com testes de renderizacao (jsdom + Testing Library): tabela renderiza as 3 novas colunas no `<thead>`; linha com `quoteStatus: "updated"` exibe valores nos 3 campos; linha com `quoteStatus: "not_collected"` exibe indicacao de indisponibilidade sem quebrar a linha; linha com `quoteStatus: "failed"` exibe indicacao de falha (campos vazios/dash)
+- [X] T011 [P] [US2] Estender `tests/unit/funds-schema.test.ts` (ou criar `tests/unit/quote-fields.test.ts`) com testes: `dbSchema.parse(...)` preserva os 6 novos campos (sem strip); registro com campos de cotacao `null` passa validacao sem erros; `quoteStatus` aceita somente os valores enum definidos
+- [X] T012 [P] [US2] Criar `tests/integration/table-quote-columns.test.tsx` com testes de renderizacao (jsdom + Testing Library): tabela renderiza as 3 novas colunas no `<thead>`; linha com `quoteStatus: "updated"` exibe valores nos 3 campos; linha com `quoteStatus: "not_collected"` exibe indicacao de indisponibilidade sem quebrar a linha; linha com `quoteStatus: "failed"` exibe indicacao de falha (campos vazios/dash)
 
 ### Implementacao User Story 2
 
-- [ ] T013 [US2] Estender `components/fundos-table.tsx`: adicionar colunas `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` no `<thead>` e nos `<td>` correspondentes de cada linha; exibir o valor quando `quoteStatus === "updated"`, indicacao de indisponibilidade (`-` ou similar, seguindo padrao visual existente) quando `quoteStatus !== "updated"`
-- [ ] T014 [US2] Atualizar `app/page.tsx`: adicionar estado `busyQuote: boolean`; adicionar funcao `updateQuote` que faz `fetch("/api/cotacao", { method: "POST" })` e trata respostas 200 (sucesso/parcial), 409 (bloqueado) e erro; adicionar botao `Atualizar cotacao` ao lado do botao `Atualizar dados` reaproveitando a mesma classe CSS; exibir `StatusBanner` com o resultado da operacao (mensagem de sucesso, parcial ou bloqueado)
-- [ ] T015 [US2] Validar gates de constituicao da US2: executar `npm run typecheck`, `npm run lint`, `npm run test` (incluindo os novos testes de renderizacao) e confirmar que todos passam
+- [X] T013 [US2] Estender `components/fundos-table.tsx`: adicionar colunas `Valor Atual`, `Min. 52 Semanas` e `Max. 52 Semanas` no `<thead>` e nos `<td>` correspondentes de cada linha; exibir o valor quando `quoteStatus === "updated"`, indicacao de indisponibilidade (`-` ou similar, seguindo padrao visual existente) quando `quoteStatus !== "updated"`
+- [X] T014 [US2] Atualizar `app/page.tsx`: adicionar estado `busyQuote: boolean`; adicionar funcao `updateQuote` que faz `fetch("/api/cotacao", { method: "POST" })` e trata respostas 200 (sucesso/parcial), 409 (bloqueado) e erro; adicionar botao `Atualizar cotacao` ao lado do botao `Atualizar dados` reaproveitando a mesma classe CSS; exibir `StatusBanner` com o resultado da operacao (mensagem de sucesso, parcial ou bloqueado)
+- [X] T015 [US2] Validar gates de constituicao da US2: executar `npm run typecheck`, `npm run lint`, `npm run test` (incluindo os novos testes de renderizacao) e confirmar que todos passam
 
 **Checkpoint**: Tabela exibe as 3 novas colunas. Botao `Atualizar cotacao` visivel e funcional na UI.
 
@@ -86,13 +86,13 @@
 
 ### Tests para User Story 3
 
-- [ ] T016 [P] [US3] Criar `tests/unit/quote-failure-cases.test.ts` com testes unitarios dos cenarios de falha: timeout gera `quoteFailureReason: "timeout"` e campos zerados; seletor nao encontrado gera `quoteFailureReason: "seletor_nao_encontrado"` e campos zerados; erro HTTP gera `quoteFailureReason: "erro_http"` e campos zerados; registro com cotacao antiga que falha fica com campos zerados e `quoteUpdatedAt` preservado
-- [ ] T017 [P] [US3] Criar `tests/e2e/quote-update.spec.ts` com testes E2E (Playwright com rotas mockadas via `page.route`): fluxo completo de sucesso — botao clicavel, spinner durante execucao, mensagem de sucesso, novas colunas visiveis na tabela; fluxo de falha parcial — mensagem de falha parcial exibida no `StatusBanner`; fluxo bloqueado — segundo clique retorna mensagem de bloqueio sem iniciar novo processamento
+- [X] T016 [P] [US3] Criar `tests/unit/quote-failure-cases.test.ts` com testes unitarios dos cenarios de falha: timeout gera `quoteFailureReason: "timeout"` e campos zerados; seletor nao encontrado gera `quoteFailureReason: "seletor_nao_encontrado"` e campos zerados; erro HTTP gera `quoteFailureReason: "erro_http"` e campos zerados; registro com cotacao antiga que falha fica com campos zerados e `quoteUpdatedAt` preservado
+- [X] T017 [P] [US3] Criar `tests/e2e/quote-update.spec.ts` com testes E2E (Playwright com rotas mockadas via `page.route`): fluxo completo de sucesso — botao clicavel, spinner durante execucao, mensagem de sucesso, novas colunas visiveis na tabela; fluxo de falha parcial — mensagem de falha parcial exibida no `StatusBanner`; fluxo bloqueado — segundo clique retorna mensagem de bloqueio sem iniciar novo processamento
 
 ### Implementacao User Story 3
 
-- [ ] T018 [US3] Revisar `app/page.tsx` para garantir tratamento correto de todos os cenarios de resposta da API de cotacao: `status: "partial"` MUST exibir mensagem informando quantas linhas falharam (usando `failedCount`); `status: "blocked"` MUST exibir mensagem de bloqueio via `StatusBanner` com tom `info`; `status: "failed"` MUST exibir mensagem de erro com tom `error`; botao `Atualizar cotacao` MUST ser desabilitado enquanto `busyQuote === true` ou `busyRefresh === true`
-- [ ] T019 [US3] Validar todos os gates de constituicao da feature completa: executar `npm run typecheck`, `npm run lint`, `npm run test`, `npm run test:e2e` e confirmar que toda a suite passa; documentar resultados em `specs/003-atualizar-cotacao/evidence/test-results.txt`
+- [X] T018 [US3] Revisar `app/page.tsx` para garantir tratamento correto de todos os cenarios de resposta da API de cotacao: `status: "partial"` MUST exibir mensagem informando quantas linhas falharam (usando `failedCount`); `status: "blocked"` MUST exibir mensagem de bloqueio via `StatusBanner` com tom `info`; `status: "failed"` MUST exibir mensagem de erro com tom `error`; botao `Atualizar cotacao` MUST ser desabilitado enquanto `busyQuote === true` ou `busyRefresh === true`
+- [X] T019 [US3] Validar todos os gates de constituicao da feature completa: executar `npm run typecheck`, `npm run lint`, `npm run test`, `npm run test:e2e` e confirmar que toda a suite passa; documentar resultados em `specs/003-atualizar-cotacao/evidence/test-results.txt`
 
 **Checkpoint**: Todos os cenarios de falha cobertos com testes automatizados e manuais. Feature 003 completa e verificavel de ponta a ponta.
 
@@ -100,8 +100,8 @@
 
 ## Final Phase: Polish & Cross-Cutting Concerns
 
-- [ ] T020 [P] Atualizar `README.md`: adicionar descricao do botao `Atualizar cotacao`, das novas colunas de cotacao e da politica de falha (campos zerados + resumo de falhas)
-- [ ] T021 [P] Criar `specs/003-atualizar-cotacao/evidence/validation-report.md` com evidencia objetiva: resultado do `typecheck`, `lint`, `test`, `test:e2e`; screenshot ou saida da tabela com as novas colunas preenchidas; conteudo de exemplo do `data/fundos-db.json` com campos de cotacao preenchidos
+- [X] T020 [P] Atualizar `README.md`: adicionar descricao do botao `Atualizar cotacao`, das novas colunas de cotacao e da politica de falha (campos zerados + resumo de falhas)
+- [X] T021 [P] Criar `specs/003-atualizar-cotacao/evidence/validation-report.md` com evidencia objetiva: resultado do `typecheck`, `lint`, `test`, `test:e2e`; screenshot ou saida da tabela com as novas colunas preenchidas; conteudo de exemplo do `data/fundos-db.json` com campos de cotacao preenchidos
 
 ---
 

@@ -47,6 +47,12 @@ body {
   color: var(--muted);
 }
 
+.hero-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .refresh-btn {
   border: 0;
   border-radius: 10px;
